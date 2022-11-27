@@ -1,0 +1,13 @@
+[Unit]
+Description=mqtt-restarter watches for dead esp devices and restarts them
+ConditionFileIsExecutable=/opt/mqtt-restarter.py
+
+
+[Service]
+ExecStart=/opt/mqtt-restarter.py
+Restart=always
+RestartSec=120
+
+[Install]
+WantedBy=multi-user.target
+
